@@ -1,0 +1,60 @@
+show databases;
+create database ineuron location "/big-data-demo/";
+101,hyd,sunny@ineuron.ai
+102,blr,sudh@ineuron.ai
+103,delhi,krish@ineuron.ai
+
+hdfs dfs -ls /apps/hive/warehouse/ineuron
+touch emp.txt
+ hdfs dfs -put emp.txt /apps/hive/warehouse/ineuron
+ 
+ 101,amit,hadoop:hive:spark:big-data
+102,sumit,hadoop:ml:dl:aiops
+103,sunny,ml:math:phy:AI
+101 first:sunny,last:savita blr,437342 bigdata,machine-learning
+102 first:arun,last:sharma hyd,745745 hadoop,hive,sql
+103 first:sushant,last:mishra pune,453454 deeplearnig,AI,MATH
+
+
+External table;
+
+Create external table employee
+(
+emp_name string,
+Unit string,
+Exp int,
+Location string
+)
+
+Create external table employee
+(
+emp_name string,
+Unit string,
+Exp int,
+Location string
+)
+
+Row format delimited 
+Fields terminated by ‘ , ’
+Location ‘any location in your ambari’
+
+hdfs dfs -put complex-demo /apps/hive/warehouse/complex_data_type1
+
+touch emp_data1.txt
+
+vi emp_data1.txt
+
+Sudh,ds,9,blr
+Krish,bd,11,blr
+Shivan,ds,5,blr
+
+cat emp_data1.txt
+
+Create table emp_details_partition
+(
+Emp_name string,
+Unit string,
+Exp int
+)
+Partitioned by (location string);
+Set hive.exec.dynamic.partition.mode=nonstrict;
