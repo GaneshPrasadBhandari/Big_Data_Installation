@@ -251,14 +251,16 @@ bash setup_bigdata.sh
 
 This project is licensed under the MIT License — you’re free to modify and use it for educational or enterprise setup purposes.
 
-🌐 Author
 
+🌐 Author
 @ganeshprasadbhandari
 @aiinovatehub
 
-🌍 LinkedIn
- | Medium
- | GitHub
+🌍 **Connect With Me:**  
+[🔗 LinkedIn](https://www.linkedin.com/in/ganesh-prasad-bhandari-b165b9187/) |  
+[🧠 Medium](https://medium.com/ai-innovations-digest) |  
+[▶️ YouTube](https://www.youtube.com/@AIINOVATEHUB) |  
+[💻 GitHub](https://github.com/AIINOVATEHUB)
 
 
 
