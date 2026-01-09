@@ -1,20 +1,20 @@
 #!/bin/bash
 # =========================================
-# 🚀 Big Data Stack Auto Installer
+# Big Data Stack Auto Installer
 # Author: AI Vanguard Labs
 # =========================================
 
 set -e
 
 echo "========================================="
-echo "🚀 Starting Big Data Stack Installation..."
+echo "Starting Big Data Stack Installation..."
 echo "========================================="
 
 # --- Update System ---
 sudo apt update && sudo apt upgrade -y
 
 # --- Install Java ---
-echo "🔧 Installing OpenJDK 11..."
+echo "Installing OpenJDK 11..."
 sudo apt install openjdk-11-jdk -y
 export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:/bin/java::")
 echo "export JAVA_HOME=$JAVA_HOME" >> ~/.bashrc
@@ -23,7 +23,7 @@ source ~/.bashrc
 java -version
 
 # --- Install Hadoop ---
-echo "📦 Installing Hadoop 3.3.6..."
+echo "Installing Hadoop 3.3.6..."
 wget -q https://downloads.apache.org/hadoop/common/hadoop-3.3.6/hadoop-3.3.6.tar.gz
 tar -xzf hadoop-3.3.6.tar.gz
 sudo mv hadoop-3.3.6 /usr/local/hadoop
@@ -70,7 +70,7 @@ EOL
 hdfs namenode -format
 
 # --- Install Spark ---
-echo "🔥 Installing Apache Spark 3.5.0..."
+echo "Installing Apache Spark 3.5.0..."
 wget -q https://downloads.apache.org/spark/spark-3.5.0/spark-3.5.0-bin-hadoop3.tgz
 tar -xzf spark-3.5.0-bin-hadoop3.tgz
 sudo mv spark-3.5.0-bin-hadoop3 /usr/local/spark
@@ -83,7 +83,7 @@ EOL
 source ~/.bashrc
 
 # --- Install Hive ---
-echo "🐝 Installing Apache Hive 3.1.3..."
+echo "Installing Apache Hive 3.1.3..."
 wget -q https://downloads.apache.org/hive/hive-3.1.3/apache-hive-3.1.3-bin.tar.gz
 tar -xzf apache-hive-3.1.3-bin.tar.gz
 sudo mv apache-hive-3.1.3-bin /usr/local/hive
@@ -98,7 +98,7 @@ source ~/.bashrc
 schematool -dbType derby -initSchema
 
 # --- Install Kafka ---
-echo "🌀 Installing Apache Kafka 3.6.0..."
+echo "Installing Apache Kafka 3.6.0..."
 wget -q https://downloads.apache.org/kafka/3.6.0/kafka_2.13-3.6.0.tgz
 tar -xzf kafka_2.13-3.6.0.tgz
 sudo mv kafka_2.13-3.6.0 /usr/local/kafka
@@ -111,17 +111,17 @@ EOL
 source ~/.bashrc
 
 # --- Install Python + Jupyter ---
-echo "🐍 Installing Python packages..."
+echo "Installing Python packages..."
 sudo apt install python3-pip -y
 pip install jupyter findspark pyspark
 
 # --- Start Services ---
-echo "🚦 Starting Hadoop, Spark, and Kafka..."
+echo "Starting Hadoop, Spark, and Kafka..."
 start-dfs.sh
 start-yarn.sh
 $SPARK_HOME/sbin/start-all.sh
 $KAFKA_HOME/bin/zookeeper-server-start.sh -daemon $KAFKA_HOME/config/zookeeper.properties
 $KAFKA_HOME/bin/kafka-server-start.sh -daemon $KAFKA_HOME/config/server.properties
 
-echo "✅ Big Data stack installation complete!"
-echo "📘 Run 'jupyter notebook' to start your analytics environment."
+echo "Big Data stack installation complete!"
+echo "Run 'jupyter notebook' to start your analytics environment."
