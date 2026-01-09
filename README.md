@@ -238,6 +238,15 @@ Hive schema init error	Delete metastore_db and rerun schematool
 Spark not recognizing Hadoop	Verify $HADOOP_HOME and $SPARK_HOME paths
 Jupyter PySpark import error	Reinstall findspark and set correct Spark path
 
+
+## ⚡ Automated Installation Script
+
+To make setup effortless, run the following **one-liner command** in your terminal after cloning this repository:
+
+```bash
+bash setup_bigdata.sh
+```
+
 📜 License
 
 This project is licensed under the MIT License — you’re free to modify and use it for educational or enterprise setup purposes.
